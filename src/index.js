@@ -1,15 +1,13 @@
-const refs = {
-  elDays: document.querySelector('[data-value="days"]'),
-  elHours: document.querySelector('[data-value="hours"]'),
-  elMins: document.querySelector('[data-value="mins"]'),
-  elSecs: document.querySelector('[data-value="secs"]'),
-}
-
 class CountdownTimer {
+
   constructor({ selector, targetDate}) {
     this.intervalId = null
     this.selector = selector
     this.targetDate = targetDate
+    this.elDays = document.querySelector('[data-value="days"]')
+    this.elHours = document.querySelector('[data-value="hours"]')
+    this.elMins = document.querySelector('[data-value="mins"]')
+    this.elSecs = document.querySelector('[data-value="secs"]')
   }
 
   startInterval() {
@@ -36,10 +34,10 @@ class CountdownTimer {
   }
 
   updateClockInterface({ days, hours, mins, secs }) {
-    refs.elDays.textContent = days
-    refs.elHours.textContent = hours
-    refs.elMins.textContent = mins
-    refs.elSecs.textContent = secs
+    this.elDays.textContent = days
+    this.elHours.textContent = hours
+    this.elMins.textContent = mins
+    this.elSecs.textContent = secs
   }
 }
 
